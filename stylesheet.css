@@ -1,3 +1,45 @@
-.title {
-  color: #02ccba;
+html, body,
+ul, ol, li,
+h1, h2, h3, h4, h5, h6, p, div {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+ font-family: 'Hiragino Kaku Gothic ProN W3', sans-serif;
+}
+
+.title-wrapper{
+  /* width: 100%; */
+  background-color:black;
+  opacity: 1;
+  color: white;
+  padding: 10px;
+  transition: all 2s;
+}
+
+.title-wrapper:hover{
+  /* width: 100%; */
+  opacity: 0.5;
+}
+
+.title-wrapper h1{
+  font-size: 24px;
+}
+
+.title-wrapper span{
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.main-wrapper{
+  background-image: url(https://github.com/hepo6479/hepo6479.github.io/blob/master/top.png?raw=true);
+  background-size: cover;
+  height: 1000px;
+}
+
+.main {
+  padding: 100px 50px;
+  color: white;
+  text-align: center;
 }
