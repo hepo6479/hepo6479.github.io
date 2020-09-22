@@ -46,3 +46,11 @@ body{
   color: white;
   text-align: center;
 }
+
+.login {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 5px;
+  margin-Top: 30px;
+}
