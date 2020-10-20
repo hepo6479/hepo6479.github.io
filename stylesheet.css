@@ -41,17 +41,17 @@ body{
   height: 1000px;
 }
 
-.main a{
+.main {
   padding: 100px 50px;
   color: white;
   text-align: center;
+
+}
+
+.link {
   display: inline-block;
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
   padding: 5px;
   margin-Top: 30px;
 }
-
-/* .login {
-
-} */
