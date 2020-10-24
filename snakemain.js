@@ -1,9 +1,15 @@
 let s;
 let scl = 20;
 let food;
+var el_hitarea = document.getElementById('hitarea');
+var el_right = document.getElementById('right');
+var el_left = document.getElementById('left');
+var el_down = document.getElementById('down');
+// var el_eventname = document.getElementById('eventname');
 
 function setup() {
-  createCanvas(400, 400);
+  myCanvas = createCanvas(400, 400);
+  myCanvas.parent('canvas');
   s = new Snake();
   pickLocation();
 }
@@ -47,3 +53,91 @@ function keyPressed() {
   //   return false; // prevent default
   // }
 }
+
+// var updateEventname = function(eventname) {
+//   el_eventname.innerHTML = eventname;
+// };
+// イベント設定
+
+el_hitarea.addEventListener('toushstart', function(event) {
+  // updateEventname('UP');
+  // updateXY(event);
+  el_hitarea.style.backgroundColor = 'red';
+  s.dir(0,-1);
+}, false);
+
+el_hitarea.addEventListener('touchmove', function(event) {
+  event.preventDefault(); // タッチによる画面スクロールを止める
+  // updateEventname('');
+  // updateXY(event);
+}, false);
+
+el_hitarea.addEventListener('touchend', function(event) {
+  // updateEventname('');
+  // updateXY(event);
+  el_hitarea.style.backgroundColor = 'blue';
+}, false);
+
+
+// イベント設定 RIGHT
+
+el_right.addEventListener('toushstart', function(event) {
+  // updateEventname('Right');
+  // updateXY(event);
+  el_right.style.backgroundColor = 'red';
+  s.dir(1,0);
+}, false);
+
+el_right.addEventListener('touchmove', function(event) {
+  event.preventDefault(); // タッチによる画面スクロールを止める
+  // updateEventname('');
+  // updateXY(event);
+}, false);
+
+el_right.addEventListener('touchend', function(event) {
+  // updateEventname('');
+  // updateXY(event);
+  el_right.style.backgroundColor = 'blue';
+}, false);
+
+// イベント設定 LEFT
+
+el_left.addEventListener('toushstart', function(event) {
+  // updateEventname('Left');
+  // updateXY(event);
+  el_left.style.backgroundColor = 'red';
+  s.dir(-1,0);
+}, false);
+
+el_left.addEventListener('touchmove', function(event) {
+  event.preventDefault(); // タッチによる画面スクロールを止める
+  // updateEventname('');
+  // updateXY(event);
+}, false);
+
+el_left.addEventListener('touchend', function(event) {
+  // updateEventname('');
+  // updateXY(event);
+  el_left.style.backgroundColor = 'blue';
+}, false);
+
+// イベント設定 DOWN
+
+el_down.addEventListener('toushstart', function(event) {
+  // updateEventname('Down');
+  // updateXY(event);
+  el_down.style.backgroundColor = 'red';
+  s.dir(0,1);
+}, false);
+
+el_down.addEventListener('touchmove', function(event) {
+  event.preventDefault(); // タッチによる画面スクロールを止める
+  // updateEventname('');
+  // updateXY(event);
+}, false);
+
+el_down.addEventListener('touchend', function(event) {
+  // updateEventname('');
+  // updateXY(event);
+  el_down.style.backgroundColor = 'blue';
+}, false);
