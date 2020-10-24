@@ -4,11 +4,28 @@
 <head>
   <meta charset="utf-8">
   <title>snake</title>
+  <link rel="stylesheet" href="touch.css">
 </head>
 
 <body>
 <h1>Snake</h1>
-<a href="index.html">back</a>
+
+<div id="canvas"></div>
+<div class="wrapper">
+  <div class="line">
+    <div id="hitarea">Up</div>
+  </div>
+
+  <div class="line LR">
+    <div id="left">Left</div>
+
+    <div id="right">Right</div>
+  </div>
+  <div class="line">
+    <div id="down">Down</div>
+  </div>
+</div>
+
 <script src="p5.js"></script>
 <script src="p5.dom.js"></script>
 <!-- <script src="p5.sound.js"></script> -->
