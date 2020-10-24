@@ -59,20 +59,20 @@ function keyPressed() {
 // };
 // イベント設定
 
-el_hitarea.addEventListener('toushstart', function(event) {
+el_hitarea.addEventListener('mousedown', function(event) {
   // updateEventname('UP');
   // updateXY(event);
   el_hitarea.style.backgroundColor = 'red';
   s.dir(0,-1);
 }, false);
 
-el_hitarea.addEventListener('touchmove', function(event) {
+el_hitarea.addEventListener('mousemove', function(event) {
   event.preventDefault(); // タッチによる画面スクロールを止める
   // updateEventname('');
   // updateXY(event);
 }, false);
 
-el_hitarea.addEventListener('touchend', function(event) {
+el_hitarea.addEventListener('mouseup', function(event) {
   // updateEventname('');
   // updateXY(event);
   el_hitarea.style.backgroundColor = 'blue';
@@ -81,20 +81,20 @@ el_hitarea.addEventListener('touchend', function(event) {
 
 // イベント設定 RIGHT
 
-el_right.addEventListener('toushstart', function(event) {
+el_right.addEventListener('mousedown', function(event) {
   // updateEventname('Right');
   // updateXY(event);
   el_right.style.backgroundColor = 'red';
   s.dir(1,0);
 }, false);
 
-el_right.addEventListener('touchmove', function(event) {
+el_right.addEventListener('mousemove', function(event) {
   event.preventDefault(); // タッチによる画面スクロールを止める
   // updateEventname('');
   // updateXY(event);
 }, false);
 
-el_right.addEventListener('touchend', function(event) {
+el_right.addEventListener('mouseup', function(event) {
   // updateEventname('');
   // updateXY(event);
   el_right.style.backgroundColor = 'blue';
@@ -102,20 +102,20 @@ el_right.addEventListener('touchend', function(event) {
 
 // イベント設定 LEFT
 
-el_left.addEventListener('toushstart', function(event) {
+el_left.addEventListener('mousedown', function(event) {
   // updateEventname('Left');
   // updateXY(event);
   el_left.style.backgroundColor = 'red';
   s.dir(-1,0);
 }, false);
 
-el_left.addEventListener('touchmove', function(event) {
+el_left.addEventListener('mousemove', function(event) {
   event.preventDefault(); // タッチによる画面スクロールを止める
   // updateEventname('');
   // updateXY(event);
 }, false);
 
-el_left.addEventListener('touchend', function(event) {
+el_left.addEventListener('mouseup', function(event) {
   // updateEventname('');
   // updateXY(event);
   el_left.style.backgroundColor = 'blue';
@@ -123,20 +123,20 @@ el_left.addEventListener('touchend', function(event) {
 
 // イベント設定 DOWN
 
-el_down.addEventListener('toushstart', function(event) {
+el_down.addEventListener('mousedown', function(event) {
   // updateEventname('Down');
   // updateXY(event);
   el_down.style.backgroundColor = 'red';
   s.dir(0,1);
 }, false);
 
-el_down.addEventListener('touchmove', function(event) {
+el_down.addEventListener('mousemove', function(event) {
   event.preventDefault(); // タッチによる画面スクロールを止める
   // updateEventname('');
   // updateXY(event);
 }, false);
 
-el_down.addEventListener('touchend', function(event) {
+el_down.addEventListener('mouseup', function(event) {
   // updateEventname('');
   // updateXY(event);
   el_down.style.backgroundColor = 'blue';
