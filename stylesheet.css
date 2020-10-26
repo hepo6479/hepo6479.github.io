@@ -98,6 +98,9 @@ body{
 }
 
 .box7 {
-  background-color: hsl(360, 60%, 60%);
+  background-color: hsl(0, 60%, 60%);
 }
 
+.box8 {
+  background-color: hsl(60, 60%, 60%);
+}
