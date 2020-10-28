@@ -5,14 +5,37 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Maze training</title>
+  <style>
+  
+  body{
+   font-family: 'Gill Sans', sans-serif;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .start {
+    width: 400px;
+    display: block;
+    margin: 0 auto 0 0;
+    text-align: right;
+  }
+  </style>
 </head>
 
 <body>
-<h1>Maze</h1>
-<a href="index.html">back</a>
-<script src="p5.js"></script>
-<script src="p5.dom.js"></script>
-<!-- <script src="p5.sound.js"></script> -->
-<script src="maze.js"></script>
+  <h1>Maze</h1>
+  <a href="index.html">back</a>
+  <p>
+    goal
+  </p>
+  <div id="canvas"></div>
+  <p class="start">start</p>
+  <script src="p5.js"></script>
+  <script src="p5.dom.js"></script>
+  <!-- <script src="p5.sound.js"></script> -->
+  <script src="maze.js"></script>
 </body>
 </html>
