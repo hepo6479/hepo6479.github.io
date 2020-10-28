@@ -5,11 +5,14 @@ let grid = [];
 
 let current;
 
+let stack = [];
+
 function setup() {
-  createCanvas(400, 400);
+  myCanvas = createCanvas(400, 400);
+  myCanvas.parent('canvas');
   cols = floor(width / w);
   rows = floor(height / w);
-  frameRate(5);
+  frameRate(40);
 
   for (let j = 0; j < rows; j++) {
     for (let i = 0; i < cols; i++) {
@@ -30,16 +33,33 @@ function index (i, j) {
 
 function draw() {
   background(51);
+
   for (let i = 0; i < grid.length; i++) {
     grid[i].show();
   }
 
+
   current.visited = true;
+  current.highlight();
+
   let next = current.checkNeighbors();
   if (next) {
+    //step1
     next.visited = true;
+
+    //step2
+    stack.push(current);
+
+    //step3
+    removeWalls(current, next);
+
+    //step4
     current = next;
+  } else if (stack.length > 0) {
+    current = stack.pop();
+
   }
+
 }
 
 function Cell(i, j) {
@@ -76,7 +96,15 @@ function Cell(i, j) {
       return undefined;
     }
 
-    }
+  }
+
+  this.highlight = function() {
+    let x = this.i * w;
+    let y = this.j * w;
+    noStroke();
+    fill(100, 0, 250, 250);
+    rect(x, y, w, w);
+  }
 
   this.show = function () {
     let x = this.i * w;
@@ -84,24 +112,48 @@ function Cell(i, j) {
 
     stroke(255);
     if (this.walls[0]) {
-        line(x    , y    , x + w, y);
+      line(x    , y    , x + w, y);
     }
     if (this.walls[1]) {
-        line(x + w, y    , x + w, y + w);
+      line(x + w, y    , x + w, y + w);
     }
     if (this.walls[2]) {
-        line(x + w, y + w, x    , y + w);
+      line(x + w, y + w, x    , y + w);
     }
     if (this.walls[3]) {
-        line(x    , y + w, x    , y);
+      line(x    , y + w, x    , y);
     }
 
 
     if (this.visited) {
-        fill(100, 20, 255);
-        rect(x, y, w, w);
+      noStroke();
+      fill(100, 0, 250, 100);
+      rect(x, y, w, w);
 
     }
 
   }
+}
+
+function removeWalls(a, b) {
+  let x = a.i - b.i;
+  if (x === 1) {
+    a.walls[3] = false;
+    b.walls[1] = false;
+  } else if (x === -1) {
+    a.walls[1] = false;
+    b.walls[3] = false;
+  }
+
+  let y = a.j - b.j;
+  if (y === 1) {
+    a.walls[0] = false;
+    b.walls[2] = false;
+  } else if (y === -1) {
+    a.walls[2] = false;
+    b.walls[0] = false;
+  }
+
+
+
 }
