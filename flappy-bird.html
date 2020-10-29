@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>flappy_bird</title>
+  <link rel="stylesheet" href="touch.css">
+  <style>
+  body{
+    font-family: 'Gill Sans', sans-serif;
+  }
+  #hitArea{
+    display: block;
+    background-color: Gray;
+    cursor: pointer;
+    width: 200px;
+    height: 80px;
+    margin: 0 auto 50px;
+    line-height: 80px;
+  }
+  </style>
+</head>
+
+<body>
+  <h1>Flappy Bird</h1>
+  <a href="index.html">back</a>
+  <div id="canvas"></div>
+  <div id="hitArea">
+    <p>
+      TAP!
+    </p>
+  </div>
+  <script src="p5.js"></script>
+  <script src="p5.dom.js"></script>
+  <!-- <script src="p5.sound.js"></script> -->
+  <script src="bird.js"></script>
+  <script src="pipe.js"></script>
+  <script src="flappy-bird.js"></script>
+</body>
+</html>
