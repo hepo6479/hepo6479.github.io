@@ -8,7 +8,7 @@ let sh;
 
 function preload() {
   sh = loadImage("sh.jpg");
-  smile = loadImage("/Users/fyst/Desktop/html_lesson/p5/smile.jpg");
+  smile = loadImage("smile.jpg");
 }
 
 
