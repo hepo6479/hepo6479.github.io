@@ -8,11 +8,11 @@ let current;
 let stack = [];
 
 function setup() {
-  myCanvas = createCanvas(400, 400);
+  myCanvas = createCanvas(400, 600);
   myCanvas.parent('canvas');
   cols = floor(width / w);
   rows = floor(height / w);
-  frameRate(40);
+  frameRate(200);
 
   for (let j = 0; j < rows; j++) {
     for (let i = 0; i < cols; i++) {
