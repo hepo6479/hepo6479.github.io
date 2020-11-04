@@ -8,11 +8,19 @@
   body{
     font-family: 'Gill Sans', sans-serif;
     text-align: center;
+
   }
 
   button{
     width : 30%;
     Height : 100px;
+    /* テキスト選択させない */
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    /* windows8のスワイプ動作を禁止 */
+    -ms-touch-action:none;
   }
 
   </style>
@@ -38,9 +46,9 @@
   <script src="shot.js"></script>
   <script>
   /* ピッチインピッチアウトによる拡大縮小を禁止 */
-  document.documentElement.addEventListener('touchstart', function (e) {
-  if (e.touches.length >= 2) {e.preventDefault();}
-  }, {passive: false});
+  // document.documentElement.addEventListener('touchstart', function (e) {
+  // if (e.touches.length >= 2) {e.preventDefault();}
+  // }, {passive: false});
   /* ダブルタップによる拡大を禁止 */
   var t = 0;
   document.documentElement.addEventListener('touchend', function (e) {
