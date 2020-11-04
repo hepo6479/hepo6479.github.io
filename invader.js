@@ -25,7 +25,7 @@ function Invader(x, y) {
   }
 
   this.grow = () => {
-    this.r -= 5;
+    this.r -= 10;
   }
 
   this.shiftDown = () => {
