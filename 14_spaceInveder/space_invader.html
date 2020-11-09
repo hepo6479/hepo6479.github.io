@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Space_Invader</title>
+  <style>
+  body{
+    font-family: 'Gill Sans', sans-serif;
+    text-align: center;
+
+  }
+
+  button{
+    width : 30%;
+    Height : 100px;
+    /* テキスト選択させない */
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    /* windows8のスワイプ動作を禁止 */
+    -ms-touch-action:none;
+  }
+
+  </style>
+</head>
+
+<body>
+
+  <h1>Space Invader</h1>
+  <a href="../index.html">back</a>
+
+  <div id="canvas"></div>
+  <div>
+    <button id="left">Left</button>
+    <button id="shot">Shot</button>
+    <button id="right">Right</button>
+  </div>
+  <script src="../p5/p5.js"></script>
+  <script src="../p5/p5.dom.js"></script>
+  <!-- <script src="p5.sound.js"></script> -->
+  <script src="space_invader.js"></script>
+  <script src="ship.js"></script>
+  <script src="invader.js"></script>
+  <script src="shot.js"></script>
+  <script>
+  /* ピッチインピッチアウトによる拡大縮小を禁止 */
+  // document.documentElement.addEventListener('touchstart', function (e) {
+  // if (e.touches.length >= 2) {e.preventDefault();}
+  // }, {passive: false});
+  /* ダブルタップによる拡大を禁止 */
+  var t = 0;
+  document.documentElement.addEventListener('touchend', function (e) {
+  var now = new Date().getTime();
+  if ((now - t) < 350){
+    e.preventDefault();
+  }
+  t = now;
+  }, false);
+</script>
+</body>
+</html>

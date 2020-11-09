@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>StopWatch</title>
+  <style>
+  Body {
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+    background: #eee;
+    text-align: center;
+  }
+
+  .container {
+    margin: 20px auto;
+    width: 270px;
+    background: white;
+    padding: 15px;
+    text-align: center;
+  }
+
+  #timer{
+    background: #ddd;
+    height: 120px;
+    line-height: 120px;
+    font-size: 40px;
+    margin-bottom: 15px
+  }
+
+  .button {
+    width: 80px;
+    height: 45px;
+    line-height: 45px;
+    background: #ddd;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .controls {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .inactive {
+    opacity: 0.6;
+  }
+  </style>
+
+</head>
+<body>
+  <h1>StopWatch</h1>
+  <a href="../index.html">back</a>
+  <div class="container">
+    <div id="timer">00:00.000</div>
+    <div class="controls">
+      <div class="button" id="start">Start</div>
+      <div class="button" id="stop">Stop</div>
+      <div class="button" id="reset">Reset</div>
+    </div>
+
+  </div>
+
+  <script src="StopWatch.js"></script>
+</body>
+
+</html>

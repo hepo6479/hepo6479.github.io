@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8"
+  <title>Calendar</title>
+
+  <style>
+    body {
+      font-family: "Courier New", monospace;
+      text-align: center;
+      font-size: 14px;
+
+    }
+
+    table {
+      border-collapse: collapse;
+      border: 2px solid #eee;
+      width: 80%;
+      margin: 30px auto;
+      line-height: 30px;
+    }
+
+    thead, tfoot {
+      background: #eee
+    }
+
+    tbody td:first-child {
+      color: red;
+    }
+
+    tbody td:last-child {
+      color: blue;
+    }
+
+    tfoot {
+      font-weight: bold;
+
+    }
+
+    td.disabled {
+      opacity: 0.3;
+    }
+
+    td.today {
+      font-weight: bold;
+    }
+
+    #prev, #next, #today {
+      cursor: pointer;
+      user-select: none;
+    }
+
+  </style>
+
+</head>
+
+<body>
+  <a href="../index.html">back</a>
+  <table>
+    <thead>
+      <tr>
+        <th id="prev">&laquo;</th>
+        <th id="title" colspan="5">2020/11</th>
+        <th id="next">&raquo;</th>
+      </tr>
+      <tr>
+        <th>Sun</th>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thu</th>
+        <th>Fri</th>
+        <th>Sat</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <tr>
+        <td class="disabled">1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+      </tr>
+      <tr>
+        <td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+      </tr>
+      <tr>
+        <td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+      </tr>
+      <tr>
+        <td>1</td><td class="today">1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+      </tr>
+      <tr>
+        <td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td>
+      </tr> -->
+
+    </tbody>
+    <tfoot>
+      <tr>
+        <td id="today" colspan="7">today</td>
+      </tr>
+    </tfoot>
+  </table>
+
+
+  <script src="calendar.js"></script>
+</body>
+
+</html>
