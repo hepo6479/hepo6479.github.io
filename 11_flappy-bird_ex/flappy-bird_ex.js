@@ -8,7 +8,7 @@ let sh;
 
 function preload() {
   sh = loadImage("https://github.com/hepo6479/hepo6479.github.io/blob/master/11_flappy-bird_ex/sh.jpg?raw=true");
-  smile = loadImage("/Users/fyst/Desktop/html_lesson/p5/smile.jpg");
+  smile = loadImage("https://github.com/hepo6479/hepo6479.github.io/blob/master/11_flappy-bird_ex/smile.jpg?raw=true");
 }
 
 
