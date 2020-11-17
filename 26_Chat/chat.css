@@ -1,0 +1,68 @@
+body {
+  font-family: "Courier New", monospace;
+  margin: 10px;
+  background: skyblue;
+}
+
+.container {
+  padding: 32px;
+}
+
+.messages {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+}
+
+.messages li {
+  display: flex;
+}
+
+.pic img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.pic {
+  width: 80px;
+  text-align: center;
+}
+
+.text {
+  background: white;
+  border-radius: 8px;
+  padding: 16px 24px;
+  max-width: 60%;
+  line-height: 1.8;
+  position:relative;
+}
+
+.messages li + li {
+  margin-top: 20px;
+}
+
+li.right-side {
+  flex-direction: row-reverse;
+}
+
+.text::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+  position: absolute;
+}
+
+.left-side .text::before{
+  top: 12px;
+  left: -16px;
+  border-right-color: white;
+}
+
+.right-side .text::before{
+  top: 12px;
+  right: -16px;
+  border-left-color: white;
+}
