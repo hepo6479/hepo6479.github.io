@@ -1,0 +1,90 @@
+body {
+
+}
+
+
+.container {
+  padding: 40px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.like {
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  transition: background .3s;
+}
+
+.heart {
+  /* display: block; */
+  /* opacity: 0.7; */
+  font-size: 100px;
+  color: #e4e4e4;
+  text-align: center;
+  user-select: none;
+  position:relative;
+  top: 5px;
+  /* z-index: 2; */
+}
+
+.like:hover {
+  background: #f5f5f5;
+}
+
+.like [type="checkbox"]:checked ~ .heart {
+  /* color: red; */
+  animation-name: heart;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+}
+
+.like [type="checkbox"] {
+  display: none;
+}
+
+@keyframes heart {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    color: red;
+  }
+
+}
+
+.ripple {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: red;
+  transform: scale(0);
+  position: absolute;
+}
+
+.like [type="checkbox"]:checked ~ .ripple {
+  /* color: red; */
+  animation-name: ripple;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
