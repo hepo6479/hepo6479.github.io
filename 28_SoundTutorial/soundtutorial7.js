@@ -23,7 +23,7 @@ function setup() {
   angleMode(DEGREES);
   colorMode(HSB);
   myCanvas.parent("canvas");
-  fft = new p5.FFT(0, 64);
+  fft = new p5.FFT(0.8, 64);
   // song.play();
   playsong.addEventListener("click", ()=> {
     playPause();
