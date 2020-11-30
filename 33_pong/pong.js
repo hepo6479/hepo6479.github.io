@@ -14,14 +14,23 @@
       this.x = rand(30, 250);
       this.y = 30;
       this.r = 10;
-      this.vx = rand(3, 5) * (Math.random() <0.5 ? 1 : -1);
-      this.vy = rand(3, 5) * (Math.random() <0.5 ? 1 : -1);
+      this.vx = rand(2, 3) * (Math.random() <0.5 ? 1 : -1);
+      this.vy = rand(2, 3) * (Math.random() <0.5 ? 1 : -1);
+      this.isMissed = false;
+    }
 
+    getMissed() {
+      return this.isMissed;
     }
 
     update() {
       this.x += this.vx;
       this.y += this.vy;
+
+      if(this.y - this.r > this.canvas.height) {
+        this.isMissed = true;
+      }
+
       if(
         this.x + this.r > this.canvas.width ||
         this.x - this.r < 0
@@ -29,7 +38,7 @@
         this.vx *= -1;
       }
       if(
-        this.y + this.r > this.canvas.height ||
+        // this.y + this.r > this.canvas.height ||
         this.y - this.r < 0
       ){
         this.vy *= -1;
@@ -59,7 +68,8 @@
     }
 
     bounce() {
-      this.vy *= -1;
+      this.vy *= -1.1;
+      this.vx *= 1.1;
     }
 
     reposition(paddleTop) {
@@ -70,8 +80,9 @@
   }
 
   class Paddle {
-    constructor() {
+    constructor(canvas, game) {
       this.canvas = canvas;
+      this.game = game;
       this.ctx = this.canvas.getContext("2d");
 
 
@@ -86,6 +97,10 @@
     addHandler() {
       document.addEventListener("mousemove", e => {
         this.mouseX = e.clientX;
+      });
+      document.addEventListener("touchmove", e => {
+        e.preventDefault();
+        this.mouseX = e.changedTouches[0].pageX;
       });
     }
 
@@ -109,6 +124,7 @@
       ) {
         ball.bounce();
         ball.reposition(paddleTop);
+        this.game.addScore();
       }
 
 
@@ -140,28 +156,47 @@
       this.canvas = canvas;
       this.ctx = this.canvas.getContext("2d");
       this.ball = new Ball(this.canvas);
-      this.paddle = new Paddle(this.canvas);
+      this.paddle = new Paddle(this.canvas, this);
       this.loop();
+      this.isGameover = false;
+      this.score = 0;
+    }
+
+    addScore() {
+      this.score++;
     }
 
     update() {
       this.ball.update();
       this.paddle.update(this.ball);
 
+      if(this.ball.getMissed()){
+        this.isGameover = true;
+      }
+
     }
 
     draw () {
+      if(this.isGameover) {
+        this.drawGameover();
+        return;
+      }
+
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
       // console.log(new Date());
       this.ball.draw();
       this.paddle.draw();
-
+      this.drawScore();
 
     }
 
 
     loop (){
+      if(this.isGameover) {
+        return;
+      }
+
       this.update();
       this.draw();
 
@@ -170,6 +205,19 @@
       });
     }
 
+    drawGameover() {
+      this.ctx.font = "28px 'Courier New'";
+      this.ctx.fillStyle = "tomato";
+      this.ctx.fillText("GAME OVER", 60, 150);
+
+    }
+
+
+    drawScore() {
+      this.ctx.font = "20px 'Courier New'";
+      this.ctx.fillStyle = "white";
+      this.ctx.fillText(this.score, 10, 25);
+    }
   }
 
 
@@ -178,6 +226,13 @@
     return;
   }
 
-  new Game(canvas);
+  let game = new Game(canvas);
+  canvas.addEventListener("click", () => {
+    if (game.isGameover) {
+      game = new Game(canvas);
+    } else {
+      return;
+    }
+  });
 
 })();
