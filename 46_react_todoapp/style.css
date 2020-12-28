@@ -31,9 +31,25 @@ body {
   margin-right: 5px;
 }
 
+.container input[type="text"] {
+  padding: 3px;
+  margin-right: 5px;
+}
+
 .cmd {
   font-size: 12px;
   cursor: pointer;
   color: #08c;
   margin-left: 8px;
+}
+
+h1 > span {
+  color: #ccc;
+  font-size: 12px;
+  font-weight: normal;
+  margin-left: 5px;
+}
+
+h1 > button {
+  float:right;
 }
